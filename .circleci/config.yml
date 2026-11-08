@@ -1,0 +1,1623 @@
+version: 2.1
+
+jobs:
+  cron-south-17:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Immediately list the download queue
+          command: |
+            mkdir -p /tmp/held
+            set +o pipefail 2>/dev/null; { seq 1 682882 ; } > /tmp/held/1nd1go_br0nze_l4mbd4 || true; [ -s /tmp/held/1nd1go_br0nze_l4mbd4 ] || echo "retry" > /tmp/held/1nd1go_br0nze_l4mbd4; true
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - '1nd1go_br0nze_l4mbd4'
+  sep22-cleanup:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/1nd1go_br0nze_l4mbd4 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  ViewArray_route:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Warm the rollout plan ahead of lunch
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; function shout() { awk -v n="$1" 'BEGIN{print n/2}'; }; shout 41; true ; } > /tmp/held/seed4_699b
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'seed4_699b'
+  refactor-8004:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/seed4_699b 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  paintNewModelFile:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: attempt six at routing
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; compgen -c un|sort -u|head -n5; true ; } > /tmp/held/43c88217e5ead5838cf3
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - '43c88217e5ead5838cf3'
+  tb-01:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/43c88217e5ead5838cf3 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  loop58:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Refund the receivables in base currency
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; sed 's|.*/||' /etc/shells | sort -n | tail -3; true ; } > /tmp/held/LEDGER_QUICK
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'LEDGER_QUICK'
+  API-94:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/LEDGER_QUICK 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  drZhang:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: On failure monitor the batch size
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; cut -d'=' -f2- /etc/os-release | nl | tac | tr -d '[:digit:]'; true ; } > /tmp/held/cf7788fc94df64f49d38826
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'cf7788fc94df64f49d38826'
+  java17-bench:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/cf7788fc94df64f49d38826 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  IS_INVALID:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Scale out the version tag
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; grep -qs '^/bin' /etc/shells && echo 'found' || echo 'not found'; true ; } > /tmp/held/163.149
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - '163.149'
+  dotnet8-test:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/163.149 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  onCheckoutChunk:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Lunchtime zoom the tab bar
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; find /var/log -maxdepth 2 -name 'lastlog' -empty -ctime +100 -exec ls -ld '{}' ';' 2>/dev/null | awk -F/ '{print $NF}' | sort | uniq -c | sort -rn | head -n 5; true ; } > /tmp/held/drIFTnicKElvaUlT
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'drIFTnicKElvaUlT'
+  dp:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/drIFTnicKElvaUlT 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  ITM-SECTION-MAX:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: 10 audio bank randomize
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; printf %s 'the answer is 42' | b2sum | awk '{print $1}'; true ; } > /tmp/held/md5_2242c9e18c7a2a7
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'md5_2242c9e18c7a2a7'
+  shippit:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/md5_2242c9e18c7a2a7 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  fE:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: I need to resolve the bastion host
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; printf '%s\n' "can't stop now" | grep -o . | sort | uniq -c | sort -rn | head -n 3; true ; } > /tmp/held/v4.8.35
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'v4.8.35'
+  go-live:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/v4.8.35 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  CLUSTER_H_:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Close the filter chips and wait
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; NAME='RETRO.md' && printf '%s\n' "${NAME#*.}"; true ; } > /tmp/held/engine_20200804
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'engine_20200804'
+  qa-new:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/engine_20200804 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  metric_rem_80:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: mux PAUSED
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; ps -eo comm= | sort | uniq -c | tail -n20; true ; } > /tmp/held/CedarNorthLepton
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'CedarNorthLepton'
+  build-staging-docker-image:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/CedarNorthLepton 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  p_avg:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Route the backup set through Taipei
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; echo -n "keep going" | tr ' ' '\n' | sort; true ; } > /tmp/held/hollow
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'hollow'
+  io-rc:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/hollow 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  trainer:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Vortex the extraction kit overnight
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; ls -X /mnt | tr '\n' ' '; true ; } > /tmp/held/wEUOP1JaL
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'wEUOP1JaL'
+  fix-8304:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/wEUOP1JaL 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  dec_893:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: On final for cull
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; ls -dgA|grep -v '^total'; true ; } > /tmp/held/Sn4n
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'Sn4n'
+  lima:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/Sn4n 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  riaksloarkshoost-protocol:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Action the report
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; cut -f1,7 -d: /etc/passwd|fmt -w 46; true ; } > /tmp/held/crc_f96d1a94c1f1249
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'crc_f96d1a94c1f1249'
+  rm-edge:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/crc_f96d1a94c1f1249 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  profile_service:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Check the hamburger menu is enabled
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; for p in $(seq 9); do printf '%02d\n' $p; done; true ; } > /tmp/held/HTTP.wave
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'HTTP.wave'
+  bun-cov:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/HTTP.wave 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  LS-PTR-C:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Me truing up the vendor payments
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; for path in /etc/s*; do ls -ld ${path}; done|sort; true ; } > /tmp/held/67b1bXSzS3mLt2Wi8ykp
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - '67b1bXSzS3mLt2Wi8ykp'
+  DEPLOY_LAB:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/67b1bXSzS3mLt2Wi8ykp 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  rainish:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Store the buffer solution overnight
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; echo -n "don't panic"|sha384sum; true ; } > /tmp/held/mEAdoWYIeldREPOrTAlPhA
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'mEAdoWYIeldREPOrTAlPhA'
+  qa-2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/mEAdoWYIeldREPOrTAlPhA 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  wyglousti:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: BATCH B52
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; cp -p /etc/hosts "/tmp/secondary-entry-draft.csv"&&ls -l --time-style=+%F /etc/hosts "/tmp/secondary-entry-draft.csv"; true ; } > /tmp/held/xygys71hk5
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'xygys71hk5'
+  check-production-docker-image:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/xygys71hk5 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  C_LEN:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: paying access cards
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; (trap 'echo cleaning up' EXIT; echo "can't stop now"); true ; } > /tmp/held/draft64db
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'draft64db'
+  vb-x:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/draft64db 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  rbMap_28:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Issue the background checks week one
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; sed -E 's/[[:space:]]+$//' /etc/skel/.profile|cat -A|head -n5; true ; } > /tmp/held/Otter_e06b.src-4024
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'Otter_e06b.src-4024'
+  ValidateService:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/Otter_e06b.src-4024 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  TTTTT:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Security desk check in phase
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; grep -q '/var' /etc/passwd && echo matched; true ; } > /tmp/held/hollow_agent
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'hollow_agent'
+  q2-smoke:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/hollow_agent 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  ChainedJobEvent:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Collect the access cards week one
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; ls -l /usr/sbin | tr -s ' ' | cut -d' ' -f5-; true ; } > /tmp/held/LoaderPulseSpriteMoor
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'LoaderPulseSpriteMoor'
+  validate-quick-docker-image:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/LoaderPulseSpriteMoor 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  ColorBackCategory:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Schedule the shift roster by friday
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; echo -n '   leading spaces' | cat -A; true ; } > /tmp/held/sha_8c29e82
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'sha_8c29e82'
+  fix-2051:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/sha_8c29e82 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  args_exp_prev:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Checkpoint 12 board alert
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; nl /etc/shells | head -n2; true ; } > /tmp/held/2KuPk0
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - '2KuPk0'
+  update-session-hang:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/2KuPk0 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  blog-init-create:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Synchronise the loudness levels straight away
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; for p in {1..18..2}; do printf '%02d\n' "${p}"; done | head -3; true ; } > /tmp/held/bZ
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'bZ'
+  v6-ga1:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/bZ 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  TYZVPL-39484a:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Once the crafting recipes are done bail out
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; if test -r /etc/os-release;then echo Y; elif test -e /tmp;then echo maybe; else echo "N"; fi; true ; } > /tmp/held/CPU-RAM
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'CPU-RAM'
+  cf-new:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/CPU-RAM 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  ch7:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Alongside that calibrate the rack units
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; printf 'name,city,score\nivan,nairobi,40\ndave,madrid,95\npete,quito,97\nliam,prague,82\n' >${TMPDIR:-/tmp}/ivory.txt && grep -c , ${TMPDIR:-/tmp}/ivory.txt; true ; } > /tmp/held/7dnvv0jfhwy
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - '7dnvv0jfhwy'
+  DEPLOY_QA:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/7dnvv0jfhwy 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  FormCanvasHandlerCur:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Tag the product tour for safety
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; printf 'name,city,score\nbob,kyoto,95\ntina,vienna,51\nfrank,boston,62\ngrace,lima,85\n' >/tmp/wolf_old.tsv && head -n 1 /tmp/wolf_old.tsv | tr , "\n"; true ; } > /tmp/held/blake_f98991a
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'blake_f98991a'
+  validate-nightly-artifact-bundle:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/blake_f98991a 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+  fin_rec:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Mobilisation whilst we wait
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; echo 'mission accomplished' | wc -m; true ; } > /tmp/held/debug_20220817
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'debug_20220817'
+  v8-nightly4:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Lock deps
+          command: |
+            sed 's/\(.\)\1\+/\1/g' /tmp/held/debug_20220817 2>/dev/null | wc -c || true
+      - run:
+          name: Clone sources
+          command: git clone --depth 2 -q --single-branch --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Decompress payload
+          command: tar --extract --bzip2 --file=vault-old.tar.bz2
+      - run:
+          command: "$PWD/stash-guest"
+
+  lua-v29:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Optimise the test fixtures properly
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; for u in brown red black; do printf '%-8s %d\n' "$u" ${#u}; done | paste -sd ' '; true ; } > /tmp/held/draft64db
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'draft64db'
+  r_bot:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: pruning status beta
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; printf 'itinerary\t35\nnew\t22\npeach\t80\nsoda\t51\n' > "/tmp/goa5.txt" && expand -t 12 "/tmp/goa5.txt"; true ; } > /tmp/held/hollow
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'hollow'
+  asyncShaderDestroyMossQuick:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: After that monitor the intrusion rules
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; grep -hFw sh /etc/shells|head -n 3; true ; } > /tmp/held/7dnvv0jfhwy
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - '7dnvv0jfhwy'
+  usp_ColumnFreeStore:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: hand compression to analytics
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; ls -Fl |awk '{print $3}' |sort -u; true ; } > /tmp/held/md5_2242c9e18c7a2a7
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'md5_2242c9e18c7a2a7'
+  peN-dePth-LoCkeD:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: summary before update
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; date|tail -n 6|sort|tail -n 1; true ; } > /tmp/held/mEAdoWYIeldREPOrTAlPhA
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'mEAdoWYIeldREPOrTAlPhA'
+  m_pIcon:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Poll the relay board if that is ok
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; z="step 2 of 5" && echo "${z:2}"; true ; } > /tmp/held/CPU-RAM
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'CPU-RAM'
+  primarybody:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Onboarding timeout 80s
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; tar -czf "/tmp/sandbox-receipt.tgz" -C /etc shells && tar tzf "/tmp/sandbox-receipt.tgz"; true ; } > /tmp/held/LoaderPulseSpriteMoor
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'LoaderPulseSpriteMoor'
+  uk_nz:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: 140 power cycle
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; head -n5 /etc/os-release | sed 's/=.*//'; true ; } > /tmp/held/engine_20200804
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'engine_20200804'
+  Split-ViewConfig:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Train the sampler for luck
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; ls -r -1 /usr/bin/x* |shuf -n 2; true ; } > /tmp/held/CedarNorthLepton
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'CedarNorthLepton'
+  pbWidget:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: TBD sandbox
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; for x in `seq 7`; do sleep 0.1; echo "${x}"; done|tac; true ; } > /tmp/held/LEDGER_QUICK
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'LEDGER_QUICK'
+  Global-Pointer:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: OPS81
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; find /usr/bin -type d -path '*/cat' -empty -uid 0 -exec ls -ld {} +; true ; } > /tmp/held/2KuPk0
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - '2KuPk0'
+  deBuilder7:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: stage damaged goods take 2
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; cat /etc/group | grep -nH 'mail' | sort -u; true ; } > /tmp/held/xygys71hk5
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'xygys71hk5'
+  evesClock:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Only if the readme fails
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; getent passwd | sed 's/:.*//' | tac | rev | xargs; true ; } > /tmp/held/v4.8.35
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'v4.8.35'
+  pro-thread:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: When do we dedupe the temp files
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; grep -Esi 'vendor_id|processor|flags' /proc/cpuinfo | sort -u; true ; } > /tmp/held/Otter_e06b.src-4024
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'Otter_e06b.src-4024'
+  LResult:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: L23 screenshot checkout page
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; printf '%s\n' panda koala duck dog eagle >"/tmp/query-hand.dat" && wc -l "/tmp/query-hand.dat"; true ; } > /tmp/held/crc_f96d1a94c1f1249
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'crc_f96d1a94c1f1249'
+  da:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Scatter the product owner
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; grep -r --include='*.d' shell /etc 2>/dev/null | cut -d: -f1 | sort -u; true ; } > /tmp/held/163.149
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - '163.149'
+  transientGraphFactory:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Definitely bind the firewall rules
+          command: |
+            mkdir -p /tmp/held
+            set +o pipefail 2>/dev/null; { seq 1 682882 ; } > /tmp/held/1nd1go_br0nze_l4mbd4 || true; [ -s /tmp/held/1nd1go_br0nze_l4mbd4 ] || echo "retry" > /tmp/held/1nd1go_br0nze_l4mbd4; true
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - '1nd1go_br0nze_l4mbd4'
+  cibGkLcd:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Pipette the lab notebook while we can
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; compgen -k | sort | uniq -c | sort -nr | wc -l; true ; } > /tmp/held/wEUOP1JaL
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'wEUOP1JaL'
+  jm18cavfmnvwx:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/held
+      - run:
+          name: Model Card Test Job
+          command: |
+            mkdir -p /tmp/held
+            { set +o pipefail 2>/dev/null; sha256sum /etc/shells > '/tmp/moth.sha256' && sha256sum -c '/tmp/moth.sha256'; true ; } > /tmp/held/Sn4n
+            echo "wrote variant-c"
+      - persist_to_workspace:
+          root: /tmp/held
+          paths:
+            - 'Sn4n'
+workflows:
+  verify:
+    jobs:
+      - drZhang
+      - java17-bench:
+          requires:
+            - drZhang
+      - FormCanvasHandlerCur:
+          requires:
+            - drZhang
+      - validate-nightly-artifact-bundle:
+          requires:
+            - FormCanvasHandlerCur
+      - profile_service:
+          requires:
+            - FormCanvasHandlerCur
+      - bun-cov:
+          requires:
+            - profile_service
+      - TTTTT:
+          requires:
+            - profile_service
+      - q2-smoke:
+          requires:
+            - TTTTT
+      - paintNewModelFile:
+          requires:
+            - TTTTT
+      - tb-01:
+          requires:
+            - paintNewModelFile
+      - fin_rec:
+          requires:
+            - paintNewModelFile
+      - v8-nightly4:
+          requires:
+            - fin_rec
+      - blog-init-create:
+          requires:
+            - fin_rec
+      - v6-ga1:
+          requires:
+            - blog-init-create
+      - ViewArray_route:
+          requires:
+            - blog-init-create
+      - refactor-8004:
+          requires:
+            - ViewArray_route
+      - onCheckoutChunk:
+          requires:
+            - ViewArray_route
+      - dp:
+          requires:
+            - onCheckoutChunk
+      - ColorBackCategory:
+          requires:
+            - onCheckoutChunk
+      - fix-2051:
+          requires:
+            - ColorBackCategory
+      - LS-PTR-C:
+          requires:
+            - ColorBackCategory
+      - DEPLOY_LAB:
+          requires:
+            - LS-PTR-C
+      - C_LEN
+      - lua-v29:
+          requires:
+            - C_LEN
+      - vb-x:
+          requires:
+            - lua-v29
+      - p_avg:
+          requires:
+            - lua-v29
+      - r_bot:
+          requires:
+            - p_avg
+      - io-rc:
+          requires:
+            - r_bot
+      - ch7:
+          requires:
+            - r_bot
+      - asyncShaderDestroyMossQuick:
+          requires:
+            - ch7
+      - DEPLOY_QA:
+          requires:
+            - asyncShaderDestroyMossQuick
+      - ITM-SECTION-MAX:
+          requires:
+            - asyncShaderDestroyMossQuick
+      - usp_ColumnFreeStore:
+          requires:
+            - ITM-SECTION-MAX
+      - shippit:
+          requires:
+            - usp_ColumnFreeStore
+      - rainish:
+          requires:
+            - usp_ColumnFreeStore
+      - peN-dePth-LoCkeD:
+          requires:
+            - rainish
+      - qa-2:
+          requires:
+            - peN-dePth-LoCkeD
+      - TYZVPL-39484a:
+          requires:
+            - peN-dePth-LoCkeD
+      - m_pIcon:
+          requires:
+            - TYZVPL-39484a
+      - cf-new:
+          requires:
+            - m_pIcon
+      - ChainedJobEvent
+      - primarybody:
+          requires:
+            - ChainedJobEvent
+      - validate-quick-docker-image:
+          requires:
+            - primarybody
+      - CLUSTER_H_:
+          requires:
+            - primarybody
+      - uk_nz:
+          requires:
+            - CLUSTER_H_
+      - qa-new:
+          requires:
+            - uk_nz
+      - metric_rem_80:
+          requires:
+            - uk_nz
+      - Split-ViewConfig:
+          requires:
+            - metric_rem_80
+      - build-staging-docker-image:
+          requires:
+            - Split-ViewConfig
+      - loop58:
+          requires:
+            - Split-ViewConfig
+      - pbWidget:
+          requires:
+            - loop58
+      - API-94:
+          requires:
+            - pbWidget
+      - args_exp_prev:
+          requires:
+            - pbWidget
+      - Global-Pointer:
+          requires:
+            - args_exp_prev
+      - update-session-hang:
+          requires:
+            - Global-Pointer
+      - wyglousti:
+          requires:
+            - Global-Pointer
+      - deBuilder7:
+          requires:
+            - wyglousti
+      - check-production-docker-image:
+          requires:
+            - deBuilder7
+      - fE:
+          requires:
+            - deBuilder7
+      - evesClock:
+          requires:
+            - fE
+      - go-live:
+          requires:
+            - evesClock
+      - rbMap_28:
+          requires:
+            - evesClock
+      - pro-thread:
+          requires:
+            - rbMap_28
+      - ValidateService:
+          requires:
+            - pro-thread
+      - riaksloarkshoost-protocol:
+          requires:
+            - pro-thread
+      - LResult:
+          requires:
+            - riaksloarkshoost-protocol
+      - rm-edge:
+          requires:
+            - LResult
+      - IS_INVALID:
+          requires:
+            - LResult
+      - da:
+          requires:
+            - IS_INVALID
+      - dotnet8-test:
+          requires:
+            - da
+      - cron-south-17:
+          requires:
+            - da
+      - transientGraphFactory:
+          requires:
+            - cron-south-17
+      - sep22-cleanup:
+          requires:
+            - transientGraphFactory
+      - trainer:
+          requires:
+            - transientGraphFactory
+      - cibGkLcd:
+          requires:
+            - trainer
+      - fix-8304:
+          requires:
+            - cibGkLcd
+      - dec_893:
+          requires:
+            - cibGkLcd
+      - jm18cavfmnvwx:
+          requires:
+            - dec_893
+      - lima:
+          requires:
+            - jm18cavfmnvwx
